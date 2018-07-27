@@ -1,0 +1,56 @@
+
+    <main >
+       
+        <nav>
+           
+            <div class="nav_link" ng-click="getProducts()">
+                <div class="nav_link-photo" style="background-image: url(img/category/burgericon.png)"></div>
+                <div class="nav_link-text">ВСІ ТОВАРИ</div>
+            </div>
+            <div class="nav_link" ng-click="getBurgers()">
+                <div class="nav_link-photo" style="background-image: url(img/category/burgericon.png)"></div>
+                <div class="nav_link-text">БУРГЕРИ</div>
+            </div>
+            <div class="nav_link" ng-click="getVegan()">
+                <div class="nav_link-photo" style="background-image: url(img/category/burgericon.png)"></div>
+                <div class="nav_link-text">ВЕГА БУРГЕРИ</div>
+            </div>
+            <div class="nav_link" ng-click="getOther()">
+                <div class="nav_link-photo" style="background-image: url(img/category/burgericon.png)"></div>
+                <div class="nav_link-text">СОУСИ ТА ДОДАТКИ</div>
+            </div>
+            <div class="nav_link" ng-click="getDrinks()">
+                <div class="nav_link-photo" style="background-image: url(img/category/burgericon.png)"></div>
+                <div class="nav_link-text">НАПОЇ</div>
+            </div>
+
+            
+            
+<!--
+            <div class="nav_link" ng-repeat="category in categories" ng-click="categoryName('Drinks')">
+                <div class="nav_link-photo nav_link-selected" style="background-image: url(img/category/burgericon.png)"></div>
+                <div class="nav_link-text">{{category.category_name}}</div>
+            </div>
+-->
+
+        </nav>
+        
+        <section  class="products" ng-init="getProducts()">
+           
+           
+            <div class="product" ng-repeat="product in products | filter: searchName">
+                <div class="product_photo" style="background-image: url({{product.product_photo}})"></div>
+                <div class="product_title">{{product.product_name}}</div>
+                <div class="product_desc">{{product.product_description}}</div>
+                <div class="product_buy">
+                    <div class="product_buy-price">{{product.product_price + "грн"}}</div>
+                    <div class="product_buy-cart" ng-click="addItemToCart(product)"> </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+    </main>
+

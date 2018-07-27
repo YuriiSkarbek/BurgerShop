@@ -1,0 +1,23 @@
+.error{
+    width: 100%;
+    height: 130vh;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 100px;
+}
+
+.error_img{
+/*    border: 1px solid black;*/
+    width: 80%;
+    height: 100vh;
+
+
+}
+
+.error_img img{
+    margin: 0 auto;
+    width: 100%;
+}

@@ -1,0 +1,162 @@
+<main>
+    <!--    <div class="cart_container" ng-show="cart.length !== 0" >-->
+    <div class="cart_container" ng-show="cart.length !== 0">
+        <!--
+      <table >
+            <tr>
+                <th>Товар</th>
+                <th>Ціна</th>
+                <th>Кількість</th>
+                <th>Сума</th>
+                
+            </tr>
+            <tr>
+               <td class="cart_del" ng-click="deleteItemCart()"> x 
+                </td>
+                <td class="cart_name"><img src="https://korova.lviv.ua/public/product_images/db608b9858ba37810158ba3a445b000e/61bb2944-f94d-4769-9932-2b4076d1b2aa.jpg" alt="a">Бургер Якась Корова</td>
+                <td class="cart_price">80грн</td>
+                <td class="cart_unit"><input type="number" value="2"></td>
+                <td class="cart_sumPrice">160грн</td>
+                
+            </tr>
+            <tr>
+               <td class="cart_del" ng-click="deleteItemCart()"> x 
+                </td>
+                <td class="cart_name">Бургер Якась Корова</td>
+                <td class="cart_price">80грн</td>
+                <td class="cart_unit"><input type="number" value="1"></td>
+                <td class="cart_sumPrice">80грн</td>
+                
+            </tr>
+            
+            <tr ng-repeat="c in cart">
+               <td class="cart_del">
+                    <button ng-click="deleteItemCart()" class="cart_del-btn">X</button>
+                </td>
+                <td class="cart_name">{{c.product_name}}</td>
+                <td class="cart_price">{{c.product_price+ "грн"}}</td>
+                <td class="cart_unit">{{c.count}}</td>
+                <td class="cart_sumPrice">{{c.product_price*c.count + "грн"}}</td>
+                
+            </tr>
+            <tr>
+                <th>Разом</th>
+                <th>{{totalCount}}</th>
+                <th>-</th>
+                <th>{{total + "грн"}}</th>
+                <th>Х</th>
+            </tr>
+
+        </table>    
+-->
+        <div class="cart_product-title">
+            <div class="product_title-name">товар</div>
+            <div class="product_title-price">ціна</div>
+            <div class="product_title-count">кількість</div>
+            <div class="product_title-sum">разом</div>
+        </div>
+        <div class="cart_product-container" ng-repeat="c in cart">
+            <div class="cart_product-del" ng-click="deleteItemCart(c)">x</div>
+            <div class="cart_product-img">
+                <img src="{{c.product_photo}}" alt="a">
+            </div>
+            <div class="cart_product-name">{{c.product_name}}</div>
+            <div class="cart_product-price">{{c.product_price+ "грн"}}</div>
+            <div class="cart_product-count">
+                <div class="count_btn count_minus" ng-click="countMinus(c)">-</div>
+                <span>{{c.count}}</span>
+                <div class="count_btn count_plus" ng-click="countPlus(c)">+</div>
+            </div>
+            <div class="cart_product-sum">{{c.product_price*c.count + "грн"}}</div>
+        </div>
+        <div class="control-group">
+            <label class="control control-radio">
+                            Доставка кур'єром
+                            <input type="radio" ng-model='value' value='delivery' ng-change='newValue(value)' />
+                            <div class="control_indicator"></div>
+                        </label>
+            <label class="control control-radio">
+                            Самовивіз
+                            <input type="radio" ng-model='value' value='selfDelivery' ng-change='newValue(value)' />
+                            <div class="control_indicator"></div>
+                        </label>
+
+
+
+            <div class="cart_total">
+                <div class="cart_total-sum">Сума: {{total}}</div>
+                <div class="btn cart_btn">
+                    <a href="#/cart" cart-order>Замовити</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart_empty" ng-show="cart.length == 0">
+        КОРЗИНА ПУСТА!
+        <div class="btn btn_cart_empty">
+            <a href='#/menu'>ВИБРАТИ БУРГЕР</a>
+        </div>
+    </div>
+    <div class="cart_order">
+        <table class="order_table">
+            <tr>
+                <th>назва товару</th>
+                <th>ціна</th>
+                <th>шт</th>
+                <th>разом</th>
+            </tr>
+            <tr ng-repeat="c in cart">
+                <td>{{c.product_name}}</td>
+                <td>{{c.product_price+ "грн"}}</td>
+                <td>{{c.count}}</td>
+                <td>{{c.product_price*c.count + "грн"}}</td>
+            </tr>
+            <tr ng-model='value' ng-show='value == "delivery"'>
+                <td>Доставка кур'єром</td>
+                <td>60грн</td>
+                <td></td>
+                <td>60</td>
+            </tr>
+
+            <tr class="cart_total">
+                <td colspan="3">Сума замовлення:</td>
+                <td colspan="1" style='font-weight: 900'>{{total + 'грн'}}</td>
+            </tr>
+        </table>
+
+        <div class="order_info">
+            <div class="order_info-text">Введіть дані для доставки:</div>
+
+            <div class="order_info-delivery">
+
+            </div>
+
+            <div class="order_info-container">
+                <div class="order_info-inputs">
+                    <div class="order_info-input">
+                        <div class="order_info-name order_info-block">
+                            <input type="text" class="KorovaInputText" placeholder="Ім'я*">
+                        </div>
+                        <div class="order_info-phone order_info-block">
+                            <input type="text" class="KorovaInputText" placeholder="Номер телефону*">
+                        </div>
+                        <div class="order_info-email order_info-block">
+                            <input type="text" class="KorovaInputText" placeholder="Email">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="order_info-comment">
+                    <textarea name="" id="" class="KorovaInputTextarea" placeholder="Додаткова інформація"></textarea>
+                </div>
+            </div>
+            <div class="order_info-address">
+                <input type="text" class="KorovaInputText" placeholder="Адреса доставки (вулиця, будинок, під'їзд...)*">
+            </div>
+            <div class="btn order_btn-container">
+                <a href="" id="order_btn" onclick="radio()">підтвердити замовлення</a>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,392 @@
+
+
+.btn a {
+
+    color: white;
+    background-color: rgba(193, 135, 77, 1);
+    box-sizing: border-box;
+    padding: 10px 50px;
+    transition: .15s;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+
+main {
+    width: 100%;
+    height: auto;
+    padding-top: 70px;
+}
+
+/*   CATEGORY STYLE   */
+
+.category {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category_text {
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.category_cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+/*    flex-wrap: wrap;*/
+
+}
+
+.category_card {
+    width: 30%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.category_card-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: sandybrown;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .2s;
+}
+
+
+
+.category_card-name {
+    padding: 15px 0;
+
+}
+
+.category_card-name a {
+    transition: .2s;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+
+
+}
+
+.category_card-info {
+    text-align: center;
+    color: slategray;
+    transition: .2s;
+}
+
+.category_card:hover .category_card-name a {
+    color: red;
+}
+
+.category_card:hover .category_card-photo {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.category_card:hover {
+    cursor: pointer;
+}
+
+.category_card:hover .category_card-info {
+    color: black;
+}
+
+.category_btn{
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+
+
+
+
+/*    VIDEO STYLE*/
+
+.video {
+    width: 100%;
+    height: auto;
+    background-color: rgba(240, 240, 240, 1);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 80px 0;
+}
+
+.video_left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.video_right {
+    width: 55%;
+
+}
+
+.video_right iframe {
+    width: 560px;
+    height: 315px;
+}
+
+.video_left-top {
+    font-size: 2em;
+    font-weight: 900;
+
+}
+
+.video_left-bottom {
+    margin: 30px 0 80px 0;
+}
+
+
+.btn a:hover {
+    background-color: rgba(193, 135, 77, 0);
+    border: 1px solid rgba(193, 135, 77, 1);
+    box-sizing: border-box;
+    color: rgba(193, 135, 77, 1);
+
+}
+
+
+
+
+
+
+/*  MAIN BLOG STYLE   */
+
+.mblog {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 70px 100px;
+}
+
+.mblog_title {
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.mblog_posts {
+    display: flex;
+    justify-content: center;
+}
+
+.mblog_post {
+    width: 300px;
+    height: 400px;
+    transition: .24s;
+    cursor: pointer;
+    padding: 0 30px;
+}
+
+.mblog_post-photo {
+    width: 100%;
+    height: 200px;
+    background-color: aquamarine;
+    background-size: 105% 105%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .3s;
+
+}
+
+.mblog_post-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid rgb(244, 244, 244);
+    transition: .24s;
+}
+
+.mblog_post-description {
+    font-size: 14px;
+    padding: 10px 10px 10px 15px;
+    transition: .28s;
+    color: rgb(153, 153, 153)
+}
+
+.mblog_post:hover .mblog_post-title {
+    color: rgba(193, 135, 77, 1);
+}
+
+.mblog_post:hover .mblog_post-description {
+    color: rgb(89, 89, 89);
+}
+
+.mblog_post:hover .mblog_post-photo{
+    background-size: 120% 120%;
+}
+
+/*   MEDIA CATEGORY   */
+
+@media only screen and (max-width: 1279px) {
+    .category_cards {
+        justify-content: space-around;
+    }
+
+    .category_card-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .category_card {
+        width: 40%;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 719px) {
+    .category_cards {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .category_card {
+        width: 70%;
+        height: 330px;
+    }
+    
+    .category_card-photo{
+        width: 200px;
+        height: 200px;
+    }
+
+    .category_btn{
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+}
+
+@media only screen and (max-width: 479px) {
+    
+    .category_cards{
+        flex-direction: column;
+    }
+    
+    .category_card-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .category_card {
+        width: 90%;
+        height: 350px;
+    }
+    
+    div.category_btn a{
+        font-size: 10px;
+    }
+}
+
+/*   MEDIO VIDEO   */
+
+@media only screen and (max-width: 1279px) {
+    .video {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    .video_left {
+        width: 600px;
+        margin-bottom: 150px;
+        margin: 0 auto;
+        margin-bottom: 150px;
+        ;
+
+    }
+
+    .video_left-top {
+        font-size: 2.6em;
+    }
+
+    .video_left-bottom {
+        font-size: 18px;
+    }
+
+    .video_right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video_right iframe {
+        width: 560px;
+        height: 315px;
+
+    }
+}
+
+@media only screen and (max-width: 719px) {
+
+    .video_left {
+        width: 460px;
+        margin-bottom: 120px;
+        margin: 0 auto;
+        margin-bottom: 120px;
+        ;
+
+    }
+
+    .video_left-top {
+        font-size: 1.8em;
+    }
+
+    .video_left-bottom {
+        font-size: 18px;
+    }
+
+    .video_right iframe {
+        width: 90%;
+
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .video_left {
+        width: 300px;
+
+    }
+
+    .video_left-top {
+        font-size: 1.4em;
+    }
+
+    .video_left-bottom {
+        font-size: 12px;
+    }
+
+    .btn a {
+        font-size: 14px;
+    }
+}
