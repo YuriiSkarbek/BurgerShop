@@ -25,15 +25,6 @@ app.config(function ($routeProvider) {
 
 app.controller('productsCtrl', function ($http, $scope) {
 
-    $scope.value = 'delivery';
-    $scope.newValue = function (value) {
-        if(value == 'selfDelivery'){
-            document.getElementsByClassName('order_info-address')[0].style.display = 'none';
-        }
-        else{
-            document.getElementsByClassName('order_info-address')[0].style.display = 'block';
-        }
-    }
 
     $scope.getProducts = function () {
         $http.get('http://localhost:8080/getProducts')
@@ -87,7 +78,6 @@ app.controller('productsCtrl', function ($http, $scope) {
     $scope.totalCount = 0;
 
     $scope.addItemToCart = function (product) {
-
         if ($scope.cart.length >= 0) {
             angular.element(document.querySelector('.cart')).addClass('cart_in');
         }
@@ -146,6 +136,24 @@ app.controller('productsCtrl', function ($http, $scope) {
             $scope.deleteItemCart(c);
         }
 
+    }
+
+    $scope.value = 'delivery';
+    $scope.delivery = {
+            product_id: '0',
+            product_name: "Доставка кур'єром",
+            product_description: "Доставка по Львову",
+            product_price: "60"
+        }
+    
+
+    $scope.newValue = function (value) {
+        if (value == 'selfDelivery') {
+            document.getElementsByClassName('order_info-address')[0].style.display = 'none';
+        } else {
+            document.getElementsByClassName('order_info-address')[0].style.display = 'none';
+            $scope.total += 60;
+        }
     }
 
 

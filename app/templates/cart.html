@@ -69,7 +69,7 @@
             </div>
             <div class="cart_product-sum">{{c.product_price*c.count + "грн"}}</div>
         </div>
-        <div class="control-group">
+        <div class="control-group cart_control-group">
             <label class="control control-radio">
                             Доставка кур'єром
                             <input type="radio" ng-model='value' value='delivery' ng-change='newValue(value)' />
@@ -86,7 +86,7 @@
             <div class="cart_total">
                 <div class="cart_total-sum">Сума: {{total}}</div>
                 <div class="btn cart_btn">
-                    <a href="#/cart" cart-order>Замовити</a>
+                    <a href="#/cart" cart-order ng-click="newValue(value)">Замовити</a>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
                 <td>Доставка кур'єром</td>
                 <td>60грн</td>
                 <td></td>
-                <td>60</td>
+                <td>60грн</td>
             </tr>
 
             <tr class="cart_total">
