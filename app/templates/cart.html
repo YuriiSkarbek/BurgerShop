@@ -123,35 +123,37 @@
                 <td colspan="1" style='font-weight: 900'>{{total + 'грн'}}</td>
             </tr>
         </table>
+        <form action="">
+            <div class="order_info">
+                <div class="order_info-text">Введіть дані для доставки:</div>
 
-        <div class="order_info">
-            <div class="order_info-text">Введіть дані для доставки:</div>
-
-            <div class="order_info-container">
-                <div class="order_info-inputs">
-                    <div class="order_info-input">
-                        <div class="order_info-name order_info-block">
-                            <input type="text" class="KorovaInputText" placeholder="Ім'я*">
-                        </div>
-                        <div class="order_info-phone order_info-block">
-                            <input type="text" class="KorovaInputText" placeholder="Номер телефону*">
-                        </div>
-                        <div class="order_info-email order_info-block">
-                            <input type="text" class="KorovaInputText" placeholder="Email">
+                <div class="order_info-container">
+                    <div class="order_info-inputs">
+                        <div class="order_info-input">
+                            <div class="order_info-name order_info-block">
+                                <input type="text" class="KorovaInputText" placeholder="Ім'я*">
+                            </div>
+                            <div class="order_info-phone order_info-block">
+                                <input type="text" class="KorovaInputText" placeholder="Номер телефону*">
+                            </div>
+                            <div class="order_info-email order_info-block">
+                                <input type="text" class="KorovaInputText" placeholder="Email">
+                            </div>
                         </div>
                     </div>
+                    <div class="order_info-comment">
+                        <textarea name="" id="" class="KorovaInputTextarea" placeholder="Додаткова інформація"></textarea>
+                    </div>
                 </div>
-                <div class="order_info-comment">
-                    <textarea name="" id="" class="KorovaInputTextarea" placeholder="Додаткова інформація"></textarea>
+
+                <div class="order_info-address">
+                    <input type="text" class="KorovaInputText" placeholder="Адреса доставки (вулиця, будинок, під'їзд...)*">
+                </div>
+                <div class="btn order_btn-container">
+                    <a href="#/" id="order_btn" ng-click='order_succesful()'>підтвердити замовлення</a>
                 </div>
             </div>
-            <div class="order_info-address">
-                <input type="text" class="KorovaInputText" placeholder="Адреса доставки (вулиця, будинок, під'їзд...)*">
-            </div>
-            <div class="btn order_btn-container">
-                <a href="#/" id="order_btn" onclick='order_succesful()'>підтвердити замовлення</a>
-            </div>
-        </div>
+        </form>
     </div>
 
 </main>

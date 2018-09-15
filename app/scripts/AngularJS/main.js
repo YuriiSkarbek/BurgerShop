@@ -140,12 +140,12 @@ app.controller('productsCtrl', function ($http, $scope) {
 
     $scope.value = 'delivery';
     $scope.delivery = {
-            product_id: '0',
-            product_name: "Доставка кур'єром",
-            product_description: "Доставка по Львову",
-            product_price: "60"
-        }
-    
+        product_id: '0',
+        product_name: "Доставка кур'єром",
+        product_description: "Доставка по Львову",
+        product_price: "60"
+    }
+
 
     $scope.newValue = function (value) {
         if (value == 'selfDelivery') {
@@ -154,6 +154,21 @@ app.controller('productsCtrl', function ($http, $scope) {
             document.getElementsByClassName('order_info-address')[0].style.display = 'none';
             $scope.total += 60;
         }
+    }
+
+    $scope.order_succesful = function () {
+        swal({
+            position: 'center',
+            type: 'success',
+            title: 'Ваше замовлення успішно відправлене в обробку',
+            showConfirmButton: false,
+            timer: 3500
+        })
+        angular.element(document.querySelector('.cart')).removeClass('cart_in');
+        $scope.cart = [];
+        $scope.totalCount = 0;
+        $scope.total = 0;
+        toTop();
     }
 
 

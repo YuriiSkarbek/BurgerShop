@@ -1,82 +1,9 @@
-.contact_container {
+
+
+#map{
+    margin-top: 50px;
     box-sizing: border-box;
-    width: 90%;
-    padding-top: 70px;
-    padding-bottom: 100px;
-    margin: 0 auto;
-    
+    width: 100vh;
+    height: 100vh;
 }
 
-.contact_top {
-    width: 100%;
-    height: 400px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.contact_top-left {
-    width: 60%;
-}
-
-.contact_top-left iframe {
-    width: 100%;
-    height: 400px;
-}
-
-.contact_top-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35%;
-    text-align: center;
-}
-
-.contact_flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.contact_flex span {
-    margin: 5px;
-}
-
-.contact_flex span img {
-    width: 50px;
-}
-
-
-.contact_form{
-    display: flex;
-    flex-direction: column;
-    background-color: red;
-    width: 50%;
-    align-items: center;
-}
-
-.contact_form input{
-    width: 100%;
-}
-
-
-
-@media only screen and (max-width: 1279px) {
-
-    .contact_container {
-        width: 98%;
-        margin: 0;
-    }
-
-    .contact_top-left {
-        width: 70%;
-    }
-    .contact_top-right{
-        width: 25%;
-        font-size: 14px;
-    }
-}
